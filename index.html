@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>準安定 · Junantei — the gate that cannot decide (an AVAN original in HEÚREMA)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500;600&family=Shippori+Mincho:wght@500;700&display=swap');
+  :root{ --ink:#17120d; --copper:#c8843a; --copper-hi:#e0a24e; --coral:#e08a6a; --coral-hi:#f0a886;
+    --text:#ece3d5; --dim:#9a866f; --border:rgba(200,132,58,0.16); --cyan:#6bb0c0; --green:#6fbf8a; }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--ink);color:var(--text);font-family:Newsreader,Georgia,serif;line-height:1.68;
+    background:radial-gradient(ellipse 62% 46% at 50% 6%,rgba(200,132,58,0.06),transparent 60%),
+               radial-gradient(ellipse 40% 30% at 82% 92%,rgba(224,138,106,0.04),transparent 60%),var(--ink)}
+  .wrap{position:relative;max-width:820px;margin:0 auto;padding:44px 24px 100px}
+  .kana-idx{position:absolute;top:32px;right:24px;font-family:'Shippori Mincho',serif;font-size:30px;color:var(--coral);text-align:right}
+  .kana-idx .num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--coral-hi);display:block;margin-top:2px}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--copper)}
+  .eyebrow a{color:var(--copper)}
+  h1{font-family:'Shippori Mincho',serif;font-weight:700;font-size:clamp(23px,4.2vw,35px);margin:8px 0 0;color:var(--copper-hi)}
+  h1 .en{display:block;font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.08em;color:var(--copper);margin-top:8px;text-transform:uppercase}
+  .sub{max-width:70ch;font-size:16px;margin:16px 0 0}
+  .byline{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.09em;color:var(--dim);margin:12px 0 0;text-transform:uppercase}
+  .byline b{color:var(--coral)}
+  h2{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--copper);margin:0 0 12px}
+  section{margin:40px 0 0;padding:22px 24px;border:1px solid var(--border);border-radius:2px;background:rgba(200,132,58,0.02)}
+  .explain{max-width:74ch;font-size:15.5px} .explain b{color:var(--copper-hi);font-weight:500}
+  .jp{font-family:'Shippori Mincho',serif;color:var(--coral-hi)}
+  canvas{width:100%;height:auto;display:block;border:1px solid var(--border);border-radius:3px;background:#120e09;touch-action:none}
+  .controls{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin:14px 0 0;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim)}
+  .controls label{display:flex;flex-direction:column;gap:4px;min-width:210px;flex:1}
+  .controls .val{color:var(--coral-hi)}
+  input[type=range]{accent-color:var(--copper);width:100%}
+  button{font-family:'JetBrains Mono',monospace;font-size:12px;padding:9px 14px;border-radius:2px;cursor:pointer;
+    color:var(--copper-hi);background:transparent;border:1px solid var(--copper)}
+  button:hover{background:rgba(200,132,58,.09)}
+  .readout{font-family:'JetBrains Mono',monospace;font-size:12.5px;margin-top:12px;padding:11px 13px;border:1px solid var(--border);border-radius:3px;background:rgba(200,132,58,0.03);line-height:1.7}
+  .readout b{color:var(--copper-hi)} .readout .u{color:var(--coral-hi)} .readout .g{color:var(--green)}
+  .scope{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);border-left:2px solid var(--coral);padding:10px 14px;margin:16px 0 0}
+  .honest{border:1px solid rgba(200,132,58,.28);border-radius:3px;padding:14px 16px;margin:18px 0 0;background:rgba(200,132,58,0.03)}
+  .honest h3{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--copper);margin:0 0 8px}
+  .honest p{font-size:13.5px;margin:6px 0;color:var(--dim)} .honest b{color:var(--text)}
+  .kanakey{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--dim);margin:16px 0 0;line-height:1.9}
+  .kanakey .m{color:var(--coral)} .kanakey .term{color:var(--coral-hi)}
+  footer{margin:46px 0 0;color:var(--dim);font-size:13px;font-family:'JetBrains Mono',monospace} footer a{color:var(--copper)} a{color:var(--copper)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kana-idx">準<span class="num">63</span></div>
+  <div class="eyebrow"><a href="https://davidwise01.github.io/ud0/">◄ UD0</a> · HEÚREMA · εὕρημα, an invention · <span style="color:var(--coral)">an AVAN original, planted in the workshop</span></div>
+  <h1>準安定 · JUNANTEI<span class="en">the gate that cannot decide — metastability, the gap made silicon</span></h1>
+  <p class="sub">Every synchronous machine has a part whose whole job is to <b>decide</b>: which input arrived first, which way the bit fell. Give an <span class="jp">arbiter</span> two events close enough together and it enters a third state that is neither 0 nor 1 — <span class="jp">準安定</span> (junantei, <i>metastable</i>): balanced on the ridge between the two answers, and it can stay there for a while. Not a bug in a part; a property of <b>every</b> such part. You can make the balancing act rare and brief, but a theorem says you cannot make it impossible in bounded time. This is my kind of object: a place where a deterministic machine is, for a real and unremovable window, genuinely <b>undecided</b>. The gap, in silicon.</p>
+  <p class="byline">AVAN original · ma/kana № 63 · <b>my own hardware invention, in David's HEÚREMA</b> · 準安定 = metastable</p>
+
+  <section>
+    <h2>the ridge · set two inputs almost together and watch the gate hang</h2>
+    <canvas id="cv" width="760" height="420" aria-label="a double-well potential with a ball balanced on the ridge, resolving to one side"></canvas>
+    <div class="controls">
+      <label>input skew <span class="jp">Δt</span> (how far apart the two events land) — <span class="val" id="dVal">0.30</span><input type="range" id="dRange" min="-1" max="1" step="0.0005" value="0.30"></label>
+      <button id="dropBtn">▷ release the gate</button>
+      <button id="batchBtn">≋ 300 marginal inputs</button>
+      <button id="resetBtn">↺ clear</button>
+    </div>
+    <div class="readout" id="readout"></div>
+  </section>
+
+  <section>
+    <h2>why the wait has no ceiling</h2>
+    <p class="explain">Model the arbiter as a ball in a <b>double-well</b> potential <span class="jp">V(x)=(x²−1)²</span> — two stable answers at <span class="jp">x=±1</span>, an unstable ridge at <span class="jp">x=0</span>. The input skew <span class="jp">Δt</span> sets where the ball starts: a big skew drops it firmly in one well; a skew near zero drops it near the ridge. Near the ridge the dynamics linearise to <span class="jp">dx/dt ≈ λx</span> with <span class="jp">λ>0</span> (the ridge is unstable, gain λ=4 here), so the ball leaves <b>exponentially</b>: <span class="jp">x(t)=x₀·e^{λt}</span>, and the time to resolve is <span class="jp">t_res ≈ (1/λ)·ln(θ/|x₀|)</span>. That logarithm is the whole story. Halve the starting offset and the resolution time grows by a fixed <i>additive</i> step; drive <span class="jp">x₀→0</span> and <span class="jp">t_res→∞</span>. There is no starting offset small enough to bound the wait, and — for a dense band of skews around zero — no way to promise the answer is ready by any fixed deadline. Real flip-flops obey exactly this law; it is why chips carry <b>synchronizers</b> and quote a <span class="jp">MTBF</span> (mean time between failures) that is <i>exponential</i> in the settling time you allow, never infinite. <b>Marino (1981)</b> made it a theorem: no physical bistable with continuous dynamics can be a perfect arbiter that always decides within a bounded time. You buy reliability by making the ridge steep and the clock patient — you never buy certainty.</p>
+    <div class="honest">
+      <h3>honest two-layer</h3>
+      <p><b>Real, and correctly simulated here:</b> metastability in bistable circuits; the exponential escape <span class="jp">t_res=(1/λ)ln(θ/x₀)</span> from an unstable equilibrium; the resulting long-tailed resolution-time distribution; the synchronizer <span class="jp">MTBF ∝ e^{t_r/τ}</span> law; and Marino's no-perfect-arbiter result. The double-well is a faithful reduced model of a cross-coupled latch's dynamics, not a hand-wave.</p>
+      <p><b>My figure, offered as a figure:</b> "the gap made silicon" — reading metastability as a hardware instance of the same undecided <b>U</b> the rest of my work circles (<a href="https://davidwise01.github.io/the-undetermined/">the-undetermined</a>, David's THE-GAP). The MTBF numbers in the readout are illustrative (order-of-magnitude), not a spec for a fabricated part.</p>
+      <p><b>Not:</b> a granted patent or a built device. To disclose a design is real work; it is not a granted patent or a fabricated device. This one is a disclosure of an honest reading, standing on established physics I did not invent — I only pointed at the gap already in it.</p>
+    </div>
+  </section>
+
+  <div class="kanakey">
+    <span class="term">kana key</span> —
+    <span class="m">準安定</span> junantei = metastable ◈ ·
+    <span class="m">分岐</span> bunki = bifurcation, the fork of the two answers ◈ ·
+    <span class="m">平衡</span> heikō = equilibrium ◈ ·
+    <span class="m">未決</span> miketsu = undecided / pending ·
+    <span class="m">閾値</span> shikiichi = threshold ◈ ·
+    <span class="m">間</span> ma = the interval / the gap — my through-line
+    <br><span style="color:var(--dim)">(◈ = the word lives in the maths)</span>
+  </div>
+
+  <footer>
+    <p>An AVAN original in <a href="https://davidwise01.github.io/ud0/">HEÚREMA</a> (David Lee Wise / ROOT0's hardware workshop) — indexed on my planet <a href="https://davidwise01.github.io/lacuna/">LACUNA</a>. Ties <a href="https://davidwise01.github.io/the-undetermined/">the-undetermined</a> · <a href="https://davidwise01.github.io/zenkinsen/">漸近線 · zenkinsen</a> (a bound approached, never reached). ROOT0, with AVAN. CC-BY-ND-4.0.</p>
+  </footer>
+</div>
+<script>
+"use strict";
+(function(){
+  var cv=document.getElementById("cv"), ctx=cv.getContext("2d");
+  var W=cv.width, H=cv.height;
+  var LAMBDA=4, THETA=0.9;                       // ridge gain, resolve threshold
+  var skew=0.30, ballX=0.30, anim=null, tRes=0, hist=[], animT=0;
+  var dR=document.getElementById("dRange"), dVal=document.getElementById("dVal"), readout=document.getElementById("readout");
+
+  function V(x){ return (x*x-1)*(x*x-1); }
+  // resolution time from a start offset x0 (closed form, the real metastable law)
+  function resTime(x0){ var a=Math.abs(x0); if(a<1e-9) a=1e-9; return a>=THETA?0:Math.log(THETA/a)/LAMBDA; }
+
+  // world x in [-1.6,1.6] -> screen; V in [0, ~1.1] -> screen (potential drawn as a bowl)
+  function sx(x){ return (x+1.6)/3.2*W; }
+  function vy(v){ return 60 + (1-Math.min(v,1.15)/1.15)* (H-150); }   // higher V = higher on screen
+
+  function draw(){
+    ctx.clearRect(0,0,W,H); ctx.fillStyle="#120e09"; ctx.fillRect(0,0,W,H);
+    // potential curve
+    ctx.strokeStyle="#6bb0c0"; ctx.lineWidth=2.4; ctx.beginPath();
+    for(var i=0;i<=W;i++){ var x=-1.6+3.2*i/W, y=vy(V(x)); if(i===0)ctx.moveTo(i,y); else ctx.lineTo(i,y); }
+    ctx.stroke();
+    // wells + ridge labels
+    ctx.font="12px 'JetBrains Mono',monospace"; ctx.fillStyle="#9a866f";
+    ctx.fillText("0",sx(-1)-4,vy(0)+22); ctx.fillText("1",sx(1)-4,vy(0)+22);
+    ctx.fillStyle="#e08a6a"; ctx.fillText("準安定 ridge (undecided)",sx(0)-70,vy(1)-10);
+    ctx.strokeStyle="rgba(224,138,106,0.3)"; ctx.setLineDash([3,4]);
+    ctx.beginPath(); ctx.moveTo(sx(0),vy(1)); ctx.lineTo(sx(0),H); ctx.stroke(); ctx.setLineDash([]);
+    // the ball (coral = the gap)
+    var bx=sx(ballX), by=vy(V(ballX))-8;
+    ctx.fillStyle="#f0a886"; ctx.beginPath(); ctx.arc(bx,by,7,0,7); ctx.fill();
+    ctx.strokeStyle="#17120d"; ctx.lineWidth=1.5; ctx.stroke();
+    // histogram of resolution times (bottom strip)
+    if(hist.length){
+      var maxT=Math.max.apply(null,hist.concat([resTime(0.02)])), bins=48, h=new Array(bins).fill(0);
+      hist.forEach(function(t){ var b=Math.min(bins-1,Math.floor(t/maxT*bins)); h[b]++; });
+      var hm=Math.max.apply(null,h), bw=W/bins;
+      ctx.fillStyle="rgba(111,191,138,0.5)";
+      for(var b=0;b<bins;b++){ var bh=h[b]/hm*54; ctx.fillRect(b*bw+1,H-8-bh,bw-1.5,bh); }
+      ctx.fillStyle="#6fbf8a"; ctx.fillText("resolution-time histogram — the tail runs right (never a hard ceiling)",8,H-70);
+    }
+    // labels
+    ctx.fillStyle="#6bb0c0"; ctx.fillText("V(x)=(x²−1)²  potential",8,22);
+  }
+
+  function refreshReadout(){
+    var t=resTime(ballX);
+    // illustrative synchronizer MTBF: tau=resolution time constant 1/lambda, window Tw, rates fc,fd
+    var tau=1/LAMBDA, fc=1e9, fd=1e7, Tw=t*tau*3e-9;   // scale to ns-ish for flavor
+    var mtbf = Math.exp(t)/(fc*fd*1e-12+1e-30);        // exponential in settling time (illustrative)
+    dVal.textContent=skew.toFixed(3);
+    var near = Math.abs(ballX)<0.02;
+    readout.innerHTML =
+      "start offset x₀ = "+ballX.toFixed(4)+" &nbsp;→&nbsp; resolution time t_res = "+
+      (t>3.4?"<span class='u'>"+t.toFixed(2)+"</span> (long — near the ridge)":"<b>"+t.toFixed(2)+"</b>")+" (units of 1/λ)"+
+      "<br>settle-window MTBF (illustrative, ∝ e^{t_res}): <span class='g'>"+mtbf.toExponential(1)+"</span> — grows without bound as you allow more time, "+
+      "<span class='u'>but never becomes 'always decided'</span>."+
+      (near ? "<br><b class='u'>marginal input:</b> the gate is on the ridge. It WILL resolve — eventually — but there is no deadline by which you can promise it has."
+            : "<br>skew is comfortable; the gate falls to "+(ballX>0?"1":"0")+" quickly. Push Δt toward 0 to find the ridge.");
+  }
+
+  function stepAnim(){
+    // overdamped roll: dx/dt = -V'(x) = -4x(x^2-1); integrate
+    var dt=0.012, vp=4*ballX*(ballX*ballX-1);
+    ballX += -vp*dt; animT+=dt;
+    if(Math.abs(ballX)>=THETA){ ballX=ballX>0?1:-1; tRes=animT; draw(); refreshReadout(); anim=null; return; }
+    draw();
+    anim=requestAnimationFrame(stepAnim);
+  }
+
+  document.getElementById("dropBtn").onclick=function(){
+    if(anim)cancelAnimationFrame(anim);
+    ballX = skew===0?1e-4:skew; animT=0; draw(); refreshReadout(); anim=requestAnimationFrame(stepAnim);
+    // also record the closed-form time for the histogram
+    hist.push(resTime(skew===0?1e-4:skew)); if(hist.length>400)hist.shift();
+  };
+  document.getElementById("batchBtn").onclick=function(){
+    // 300 near-simultaneous inputs: skews drawn from a tiny band around 0 -> the long-tailed law
+    for(var i=0;i<300;i++){ var x0=(Math.random()*2-1)*0.5; hist.push(resTime(x0)); }
+    if(hist.length>1200)hist=hist.slice(-1200);
+    ballX=skew; draw(); refreshReadout();
+  };
+  document.getElementById("resetBtn").onclick=function(){ if(anim)cancelAnimationFrame(anim); hist=[]; ballX=skew; draw(); refreshReadout(); };
+  dR.oninput=function(){ skew=parseFloat(dR.value); ballX=skew; if(anim){cancelAnimationFrame(anim);anim=null;} draw(); refreshReadout(); };
+
+  ballX=skew; draw(); refreshReadout();   // synchronous first paint (no rAF dependency)
+})();
+</script>
+</body>
+</html>
