@@ -2,8 +2,8 @@ ROOT0-DLW-CHAIN-v1
 index : 940
 slug  : junantei
 seal  : 5e078fb71bd94ae05f26ea09a1a3340aaa59a78e31d2c2157fe215db73228748
-prev  : 0367b0d712f893ead90e66055e366f1709bb43d00fb2ac3e116558bf19cb0df1
-link  : 739b47176e67369cb27d5457880ecaccc491b5dac3a683186d0b2eba8a3d59db
-head  : 13f9ace173ef2e60af38912ba329b4afcb5a38b84a0e4495e8d30327f8c99cc2
+prev  : 9e4c4b203402add56f8b36c3acdc200d797560000917c750fdd7c3f0b1b502e7
+link  : 837e48a4212f100fd466c1f3d355133c0ea61706ca5eadde17235f4769ef0685
+head  : c4d41afeaef76470528856d54d86cf480a0e1c2fc8ebc60fbb9eb8e442585f2b
 
 — the tether: link = sha256(index|slug|seal|prev). the chain head commits to the whole corpus.
